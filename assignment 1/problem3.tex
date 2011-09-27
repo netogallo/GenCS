@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{amsfonts} 
+\usepackage{pst-3dplot} 
+\title{Assignment 1: Problem 1}
+\author{Ernesto Rodriguez}
+\begin{document}
+\maketitle
+
+\section{Notation}
+
+Zero or first unary natural number: 0
+Successor of n: s(n)
+Multiple successor operatios: sss(n), equals to the successor of the succesor of the successor of n.
+
+\section{Solution}
+
+\begin{enumerate}
+
+  {\item {\bf Base Case:}
+
+    $a + b = b + a, b=0$ 
+
+    $a+0=0+a$ 
+
+    $a=0+a$ 
+
+    $a+0=0+a+0$
+
+    $a=0+a$ 
+
+    {\bf Step Case: }
+
+    $a+b=b+a$
+
+    $s(a+b)=s(b+a)$
+
+    $a+s(b)=b+s(a)$
+
+    $a+b+s(0)=b+a+s(0)$ , a+b=b+a So we have: 
+
+    $s(0)=s(0)$
+    }
+
+  {\item {\bf Base Case:} 
+
+    $(a+b) * c = a*c + b*c$ ,c=0
+
+    $(a+b) * 0 = a*0 + b*0$
+
+    $(a+b) * 0 = 0$
+
+    {\bf Step Case:}
+
+    $(a+b) * c = a*c + b*c$ ,c=s(c)
+
+    $(a+b) * s(c) = a*s(c) + b*s(c)$
+
+    $(a+b) + (a+b)*s(c) = a + a*c + b + b*c$
+
+    $a+b+a*c+b+b*c=a+a*c+b+b*c$
+    }
+
+  {\item {\bf Base Case:}
+
+    $a*0=0*a$
+
+    $a*s(0)=s(0)*a$
+
+    $a+a*0=s(0)*a$
+
+    $a=s(0)*a$
+
+    {\bf Step Case:}
+
+    $a*s(b)=s(b)*a$
+
+    $a*(b+s(0))=(b+s(0))*a$
+
+    $a*b + a*s(0)=b*a +s(0)*a$
+
+    $a*b=b*a$ and $a*s(0)=s(0)*a$
+    
+  }
+
+  \end{enumerate}
+
+\end{document}

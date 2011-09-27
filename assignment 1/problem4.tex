@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{amsfonts} 
+\usepackage{pst-3dplot} 
+\title{Assignment 1: Problem 4}
+\author{Ernesto Rodriguez}
+\begin{document}
+\maketitle
+
+\section{Notation}
+
+Zero or first unary natural number: 0
+Successor of n: s(n)
+Multiple successor operatios: sss(n), equals to the successor of the succesor of the successor of n.
+
+\section{Solution}
+
+Let $P_1,P_2,...,P_n$ arbitrary convex polygons.
+
+{\bf Base Case} 
+
+We assume the following:
+\begin{itemize}
+  {\item $P_1,P_2,P_3$ have a common edge.}
+  {\item $P_2,P_3,P_4$ have a common edge.}
+
+\end{itemize}
+
+Then $P_1,P_2,P_3,P_4$ have a common edge. Since $P_2,P_3$ are in both cases.
+
+{\bf Step Case}
+
+Prove the property holds for $P_{s(n)}$
+\begin{itemize}
+  {\item $P_n,P_{s(n)},P_{ss(n)}$ have a common edge.}
+  {\item $P_{s(n)},P_{ss(n)},P_{sss(n)}$ have a common edge.}
+\end{itemize}
+
+$P_n,P_{s(n)},P_{ss(n)}$ have a common edge with all the polygons. $P_{s(n)},P_{ss(n)}$ appear in both sets, so $P_{s(n)},P_{ss(n)},P_{sss(n)}$ should also have a common point with all the polygons.
+  
+
+\end{document}

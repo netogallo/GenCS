@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{amsfonts} 
+\usepackage{pst-3dplot} 
+\title{Assignment 1: Problem 1}
+\author{Ernesto Rodriguez}
+\begin{document}
+\maketitle
+
+\section{Notation}
+
+Zero or first unary natural number: 0
+Successor of n: s(n)
+Multiple successor operatios: sss(n), equals to the successor of the succesor of the successor of n.
+
+\section{Solution}
+
+{\bf Base Case:}
+
+$(1+x)^n \ge n \dot x$
+
+{\bf Step Case:}
+
+$(1+x)^{n+1} \ge (n+1) \dot x$ 
+
+$(1+x)^n \dot (1+x) \ge x \dot (n+1) $ 
+
+$(1+x)^n + x \dot (1+x)^n \ge x \dot n + x $ 
+
+$ (1+x)^n \ge n \dot x $ ,Then we have:
+
+$x \dot (1+x)^n \ge x $
+
+$ (1+x)^n \ge 1 $
+
+\end{document}

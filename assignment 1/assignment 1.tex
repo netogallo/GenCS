@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{amsfonts} 
+\usepackage{pst-3dplot} 
+\title{Assignment 1: Elementary Math}
+\begin{document}
+\maketitle
+
+\section Notation
+
+Zero or first unary natural number: 0
+Successor of n: s(n)
+Multiple successor operatios: sss(n), equals to the successor of the succesor of the successor of n.
+
+\section Problem 1
+
+{\bf Base Case:}
+
+$(1+x)^n \ge n \dot x$
+
+{\bf Step Case:}
+
+$(1+x)^{n+1} \ge (n+1) \dot x$ 
+
+$(1+x)^n \dot (1+x) \ge x \dot (n+1) $ 
+
+$(1+x)^n + x \dot (1+x)^n \ge x \dot n + x $ 
+
+$ (1+x)^n \ge n \dot x $ ,Then we have:
+
+$x \dot (1+x)^n \ge x $
+
+$ (1+x)^n \ge 1 $
+
+\section Problem 3
+
+\begin{enumerate}
+
+  {\item {\bf Base Case:} //* //*
+    $a + b = b + a, b=0$ //*
+    $a+0=0+a$ //*
+    $a=0+a$ //*
+    $a+0=0+a+0$
+    $a=0+a$ //* //*
+    {\bf Step Case: } //* //*
+    $a+b=b+a$ //*
+    s(a+b)=s(b+a) //*
+    a+s(b)=b+s(a) //*
+    a+b+s(0)=b+a+s(0) , a+b=b+a So we have: //*
+    s(0)=s(0)
+    }
+
+  {\item {\bf Base Case:} //*//*
+    $(a+b) \dot c$
+
+  }
+
+  \end{enumerate}
+
+\end{document}

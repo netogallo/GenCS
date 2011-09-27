@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{amsfonts} 
+\title{Assignment 2: More induction, Math Talk}
+\author{Ernesto Rodriguez}
+\begin{document}
+\maketitle
+
+\section{Problem 1}
+
+Prove that $\forall n \in \mathbb{N} \wedge n \geq 1 \exists x \in \mathbb{N} . x*17 = 3*(5^{2n+1})+(2^{3*n+1}) $: 
+\newline
+Base Case n=1:
+
+\begin{itemize}
+  
+\item {$3*(5^{2*1+1})+(2^{3*1+1})=17*x$}
+\item $391=17*x$
+\item $23=x$
+
+\end{itemize}
+
+Step Case n+1:
+
+\begin{itemize}
+
+  \item{$3*(5^{2*(n+1)+1} + 2^{3*(n+1)+1}$}
+  \item{$3*5*5*5^{2n+1} + 2*2*2^{3*n+1}$}
+
+\end{itemize}
+
+\end{document}
+
+
