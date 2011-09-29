@@ -18,3 +18,15 @@ def megaSet(S):
                     print (x,y)
 
     return P
+
+
+def megaSet2(S):
+    P=[]
+    for x in S.subsets():
+        for y in S.subsets():
+            if x.union(y)==S:
+                if(not ((x,y) in P)):
+                    P.append((x,y))
+                    print (x,y)
+
+    return P
