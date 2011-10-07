@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\title{Assignment 4: Relations, Functions and Introducction to SML}
+\author{Ernesto Rodriguez}
+\begin{document}
+\maketitle
+
+\section{Problem 2}
+
+Lets assume the following:
+
+\begin{enumerate}
+  \item{Let's assume that the functions that satisfy the given conditions are all functions such that $f(x) \leq x$.}
+  \item{Since the function is injective and the natural numbers are countable. Under the first condition we must also assume that all numbers $n \in \mathbb{N}$ in the codomain are mapped by some f(x) $x \in \mathbb{N}$ | $x \leq n$. In other words all numbers smaller than a certain number are mapped by functions of a number smaller or equal than the number.}
+\end{enumerate}
+
+Let's now suppose there is some $f(x)$ | $f(x) \leq x$ $\forall$ $x \leq N$. But for some $n > N$, f(n)>n:
+
+\[
+f^2(n) \leq \frac{n+f(n)}{2}
+\]
+
+For the above to be true, $f^2(n) < f(n)$ since $n<f(n)$. This means $f^2(n)$ must be in the interval [N,f(n)]. Now let's consider the case $f(n)$:
+
+\[
+f^3(n) \leq \frac{f(n)+f^2(n)}{2}
+\]
+
+We know that for this equivalence to hold:
+
+\[
+f^3(n) \leq f(n) \text{ or } f^3(n) \leq f^2(n)
+\]
+
+But since we know that $f^2(n) \leq f(n)$ then is evident that $f^3 \leq f(n)$ must be true for the above inequality to hold. Since the function must be injective, the last statement implies that $f^3(n)$ must be in the interval [N,f(n)] as well. We can do this for the next k steps, namely $f^k(x)$ and conclude that $f^k(n)$ must belong to the interval [N,f(n)]. This means we can always choose k to be bigger than f(n)-N and conclude that the function $f(x)$ can't be injective since all the natural numbers in the interval [N,f(n)] will already be mapped by some $f^i(n)$. 
+
+{\bf Conclusion } The proof above states that the set \{f(n)\} of functions that satisfy the inequality above must be defined as follows:
+
+\[
+\{f(n)|f:\mathbb{N} \rightarrow \mathbb{N} \wedge f(n)\leq n \wedge \text{ f(n) is injective}\}
+\]
+
+The only function in such set is $f(n)=n$.
+
+\end{document}
