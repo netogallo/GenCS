@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\title{Assignment 5: ADT's, Inductive Functions and SML}
+\author{Ernesto Rodriguez}
+\begin{document}
+\maketitle
+
+\section{Problem 7}
+
+\subsection{Part 1}
+
+The functions written in a more `readable` look something like this:
+
+\[
+f(x,y) =
+\left\{
+	\begin{array}{ll}
+		0  & \mbox{if } x,y = 0 \\
+		g(0,y) & \mbox{if } x = 0\\
+                3+g(x-1,y+1) & \mbox{otherwise}
+	\end{array}
+\right.
+g(x,y) =
+\left\{
+	\begin{array}{ll}
+		0  & \mbox{if } x,y = 0 \\
+		f(x,0) & \mbox{if } y = 0\\
+                2+g(x,y-1) & \mbox{otherwise}
+	\end{array}
+\right.
+\]
+
+We can see that it first loops through x until it gose to zero and then through y. For every `loop` it dose in x, x is reduced by one and 5 units are added (or the function returns five times the succesor). Then after x gose to zero it start iterating over y wheras 2 is added per y iteration. So the `final` version would look something like this:
+
+\[
+f \circ g (x,y)=5x+2y
+\]
+
+\subsection{Part 2}
+
+\begin{itemize}
+
+  \item{{\bf Substraction:} $sub(0,0)=0$ and $sub(0,y)=0$ and $sub(x,0)=x$ and $sub(s(x),s(y))=sub(s,y)$}
+  \item{{\bf Factorial:} Assuming multiplication by n $\mu$ is defined as in the homework: \\
+    $fact(0)=0$ and $fact(s(0))=s(0)$ and $fact(s(x))=\mu(s(x),fact(x))$}
+  \item{{\bf Modulo: } We need to define some helper functions:\\
+    $ge(0,0)=1$ and $ge(0,n)=0$ and $ge(n,0)=1$ and $ge(s(n),s(m))=ge(n,m)$\\
+    $myIf(0,a,b)=b$ and $myIf(n,a,b)=a$\\
+    Now we can define the modulo:\\
+    $mod(0,0)=0$ and $mod(n,0)=0$ and $mod(0,n)=0$ and $mod(a,b)=myIf(ge(a,b),mod(sub(a,b)),a)$\\
+    }
+  \item{{\bf Division by two:} $\gamma(0)=0$ and $\gamma(n)=myIf(ge(n,2),s(\gamma(sub(n,2))),0)$}
+
+\end{itemize}
+    
+    
+\end{document}

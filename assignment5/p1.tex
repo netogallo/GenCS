@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\title{Assignment 5: ADT's, Inductive Functions and SML}
+\author{Ernesto Rodriguez}
+\begin{document}
+\maketitle
+
+\section{Problem 1}
+
+The statement says that if x,y are coprime we can find an a,b such that $a<y$ and $b<x$ and:
+
+\begin{equation}
+  a*x-b*y=1
+\end{equation}
+
+Now assume $a>y$ and $b>x$ now we have:
+
+\[
+a*x-b*y=1 
+\]
+\[
+a*x-1=b*y
+\]
+\begin{equation}
+\frac{a*x}{b}-\frac{1}{b}=y
+\end{equation}
+
+Since we assume $b>x$ from equation 2 we can deduce that:
+
+\[
+\frac{a}{b}-\frac{1}{b}\leq\frac{a*x}{b}-\frac{1}{b}=y
+\]
+\[
+\frac{a}{b}-\frac{1}{b}\leq y
+\]
+\[
+\frac{a}{b}\leq y+\frac{1}{b}
+\]
+
+Since $b\geq1$ we have:
+\[
+y \leq y+\frac{1}{b}
+\]
+
+This implies that:
+
+\[
+\frac{a}{b}\leq y
+\]
+\begin{equation}
+  a\leq b*y
+\end{equation}
+
+We know $b\geq1$ so we also know that:
+
+\[
+y\leq y*b
+\]
+
+Thus we can rewrite equation 3 as:
+\begin{equation}
+  a \leq y
+\end{equation}
+
+Which is a contradiction to the original assumption that $y>a$.
+
+\end{document}

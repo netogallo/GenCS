@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\title{Assignment 5: ADT's, Inductive Functions and SML}
+\author{Ernesto Rodriguez}
+\begin{document}
+\maketitle
+
+\section{Problem 4}
+
+My team will be represented by the following ADT, as specified on the instructions, I will assume that my abstract data type contains the necesary declarations to represent $\mathbb{N}$ as the natural numbers.
+\[
+S^0=\{\mathbb{N},Position,LastName,Char,Player,Team\} 
+\]
+\[
+\begin{array}[b]{r}
+  \sum=\{[GK:Position],[MF:Position],\\
+
+         [FW:Position],[DF:Position],\\
+
+         [(a-z,A-Z):Char],[\$:LastName],\\
+
+         [++:Char*LastName\mapsto LastName],\\
+
+         [Player:LastName*\mathbb{N}*Position\mapsto Player],\\
+
+         [empty:Team],[add:Player*Team\mapsto Team],\\
+
+         [sub:\mathbb{N}*Player*Team\mapsto Team]\}
+\end{array}
+\]
+\[
+MyTeam=\langle S^0,\sum \rangle
+\]
+
+I will assume ++ is an infix function and I will use syntatic sugar to represent the LastName "G++O++M++E++Z++\$" as "GOMEZ". So my team in terms of add will be declared as follows:
+
+\[
+\begin{array}[b]{r}
+  myTeam=add(Player("Yashin",1,GK),\\
+  (add(Player("Carlos",6,DF)),\\
+  (add(Player("Maldini",3,DF)),\\
+  (add(Player("Cafu",2,DF)),\\
+  (add(Player("Hagi",10,MF)),\\
+  (add(Player("Matthaus",12,MF)),\\
+  (add(Player("Zidane",5,MF)),\\
+  (add(Player("Beckham",23,MF)),\\
+  (add(Player("Stoitchkov",8,FW)),\\
+  (add(Player("Ronaldo",9,FW)),\\
+  (add(Player("Pele",11,FW)),\\
+  (add empty))))))))))))
+\end{array}
+\]
+
+Now this is how the substitutions would look like:
+
+\[
+\begin{array}[b]{r}
+  myNewTeam=sub(6,Player("Moore",4,DF),\\
+  sub(6,Player("Thuram",15,DF),\\
+  sub(3,Player("Figo",7,MF),myTeam)))
+\end{array}
+\]
+
+\end{document}

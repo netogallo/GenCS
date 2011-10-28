@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\title{Assignment 5: ADT's, Inductive Functions and SML}
+\author{Ernesto Rodriguez}
+\begin{document}
+\maketitle
+
+\section{Problem 5}
+
+The Box of Chocolates ADT will be represented as follows:
+
+\[
+S^0={one,myNats,sweetness,weight,milkPart,dimensions,chocolate}
+\]
+\[
+\begin{array}[b]{r}
+  \sum=\{[i:one],[O:myNats],[++:one*myNats\mapsto myNats],[sweetness:myNats\mapsto sweetness],\\
+
+  [weight:myNats\mapsto weight],[milkPart:myNats*myNats\mapsto milkPart],\\
+
+    [chocolate:sweetness*weight*milkPart*dimensions\mapsto chocolate],\\
+
+    [dimensions:myNats*myNats*myNats\mapsto dimensions],\\
+
+    [plus:myNats*myNats\mapsto myNats],\\
+
+    [mul:myNats*myNats\mapsto myNats]\}\\
+\end{array}
+\]
+\[
+Chocolates=\langle S^0,\sum \rangle
+\]
+
+\end{document}
