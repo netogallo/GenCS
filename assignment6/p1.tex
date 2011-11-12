@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\title{Assignment 6: Abstract Procedures}
+\author{Ernesto Rodriguez}
+\begin{document}
+\maketitle
+
+\section{Problem 1}
+
+\subsection{Part 1}
+\[
+  swap:=\langle f::\mathbb{T}x\mathbb{T} \rightarrow \mathbb{T}x\mathbb{T};\{f(l(a),l(b)=\langle l(b),l(a) \rangle\}\rangle
+\]
+\subsection{Part 2}
+\[
+\begin{array}{ll}
+  and:=\langle f::\mathbb{B}x\mathbb{B}\rightarrow \mathbb{B}; \{f(T,T)=T,f(F,a)=F\} \rangle\\
+  if:=\langle f::\mathbb{B}x\mathbb{T}x\mathbb{T}\rightarrow\mathbb{T}; \{f(T,a,b)=a,f(F,a,b)=b\}\rangle\\
+  cmp:=\langle f::\mathbb{T}x\mathbb{T}\rightarrow\mathbb{B};\\
+  f(nil,t)=T,f(p(a),p(b))=f(a,b),f(c(a),c(b))=f(a,b),f(m(a),m(b))=f(a,b),f(a,b)=F\}\rangle\\
+  include:=\langle f::\mathbb{T}x\mathbb{T}\rightarrow\mathbb{B}; \{\\
+  \begin{array}{ll}
+    f(t,nil)=F,f(a,l(t))=f(a,t),\\
+    f(a,m(t))=if(cmp(a,m(t)),T,f(a,t)),\\
+    f(a,c(t))=if(cmp(a,c(t)),T,f(a,t)),\\
+    f(a,p(t))=if(cmp(a,c(t)),T,f(a,t))\\
+  \end{array}\\
+  \}\rangle
+  \end{array}
+\]
+\subsection{Part 3}
+\[
+\begin{array}{ll}
+  equal:=\langle f::\mathbb{T}x\mathbb{T}\rightarrow\mathbb{B};\{\\
+  \begin{array}{ll}
+    f(nil,t)=T,f(p(a),p(b))=f(a,b),\\
+    f(c(a),c(b))=f(a,b),\\
+    f(m(a),m(b))=f(a,b),\\
+    f(l(a),l(b))=f(a,b),f(a,b)=F\\
+  \end{array}{ll}\\
+\}\rangle
+\end{array}
+\]
+\subsection{Part 4}
+\[
+\begin{array}{ll}
+  samelen:=\langle f::\mathbb{T}x\mathbb{T}\rightarrow\mathbb{B}; \{\\
+  \begin{array}{ll}
+    f(nil,nil)=T,f(a,b(nil))=F,\\
+    f(a(nil),b)=f,f(a(t1),b(t2))=f(t1,t2)\\
+  \end{array}\\
+  \} \rangle
+\end{array}
+\]
+Note that here $a,b \in \{l,m,p,c\}$ but where used in a generic way to avoid repeating the same over and over.
+\subsection{Part  5}
+\[
+\begin{array}{ll}
+  cons:=\langle f::\mathbb{T}x\mathbb{T}\rightarrow\mathbb{T}; \{\\
+  \begin{array}{ll}
+    f(t,nil)=t,f(nil,t)=t,f(m(a),b)=m(f(a,b)),\\
+    f(c(a),b)=c(f(a,b)),f(m(a),b)=m(t(a,b)),\\
+    f(l(a),b)=l(cons(a,b))\\
+  \end{array}\\
+  \} \rangle\\
+  helper:=\langle f::\mathbb{T}x\mathbb{T}x\mathbb{T}\rightarrow \mathbb{T}; \{\\
+  \begin{array}{ll}
+    f(nil,h,t)=cons(h,t),f(l(a),h,t)=f(a,l(h),t),\\
+    f(c(a),h,t)=f(a,h,c(t)),f(m(a),h,t)=f(a,h,m(t))\\
+  \end{array}\\
+  \} \rangle\\
+  \rho:=\langle f::\mathbb{T}\rightarrow\mathbb{T}; \{f(a)=helper(a,nil,nil)\}\rangle
+\end{array}
+\]
+\end{document}

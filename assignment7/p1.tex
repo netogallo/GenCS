@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}    % needed for including graphics e.g. EPS, PS
+%\usepackage{algorithmic} 
+\topmargin -1.5cm        % read Lamport p.163
+\oddsidemargin -0.04cm   % read Lamport p.163
+\evensidemargin -0.04cm  % same as oddsidemargin but for left-hand pages
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty}       % Uncomment if don't want page numbers
+\parskip 7.2pt           % sets spacing between paragraphs
+%\renewcommand{\baselinestretch}{1.5} 	% Uncomment for 1.5 spacing between lines
+\parindent 0pt		  % sets leading space for paragraphs
+\author{Ernesto Rodriguez}
+\title{Assignment 7: SML Playground}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+
+\subsection{Substitution Application}
+
+\begin{itemize}
+  \item{$\omega(s)$:
+    \[
+    \begin{array}{ll}
+      \omega(h(g(x,y,c),x))\\
+      h(\omega(\langle g(x,y,c),x \rangle))\\
+      h(\omega (g(x,y,c)),\omega(x))\\
+      h(g(\omega (\langle x,y,c \rangle)),h(a,b))\\
+      h(g(\omega(x),\omega(y),\omega(c)),h(a,b))\\
+      h(g(h(a,b),g(c,f(c),b),c),h(a,b))\\
+    \end{array}
+    \]
+    }
+  \item{$\omega(t)$:
+    \[
+    \begin{array}{ll}
+      \omega(g(y,h(y,x),a))\\
+      g(\omega(\langle x,h(y,x),a\rangle))\\
+      g(\omega(x),\omega(h(y,x)),\omega(a))\\
+      g(h(a,b),h(\omega(\langle y,x\rangle)),a)\\
+      g(h(a,b),h(\omega(y),\omega(x)),a)\\
+      g(h(a,b),h(g(c,f(c),b),h(a,b)),a)\\
+    \end{array}
+    \]
+  }
+  \item{$\tau(s)$:
+    \[
+    \begin{array}{ll}
+      \tau(h(g(x,y,c),x))\\
+      h(\tau(\langle g(x,y,c),x\rangle))\\
+      h(\tau(g(x,y,c)),\tau(x))\\
+      h(g(\tau(\langle x,y,c\rangle)),a)\\
+      h(g(\tau(x),\tau(y),\tau(c)),a)\\
+      h(g(a,h(b,c),b),a)\\
+    \end{array}
+    \]
+  }
+  \item{$\tau(t)$:
+    \[
+    \begin{array}{ll}
+      \tau(g(y,h(y,x),a))\\
+      g(\tau(\langle y,h(y,x),a \rangle))\\
+      g(\tau(y),\tau(h(y,x)),\tau(a))\\
+      g(h(b,c),h(\tau(\langle y,x\rangle)),a)\\
+      g(h(b,c),h(\tau(y),\tau(x)),a)\\
+      g(h(b,c),h(h(b,c),a),a)
+    \end{array}
+    \]
+  }
+\end{itemize}
+
+\subsection{Commutativity Proof}
+
+No, substitution isn't commutative. The coutner-example is the following:
+
+We have $\omega(t)=g(h(a,b),h(g(c,f(c),b),h(a,b)),a)$ and $\tau(t)=g(h(b,c),h(h(b,c),a),a)$ so $\tau(\omega(t))$:
+
+\[
+\begin{array}{ll}
+  \tau(g(h(a,b),h(g(c,f(c),b),h(a,b)),a))\\
+  g(h(\tau(a),\tau(b)),h(g(\tau(c),f(\tau(c))),\tau(b)),h(\tau(a),\tau(b)),\tau(a))\\
+  g(h(a,b),h(g(b,f(b)),a),a)
+\end{array}
+\]
+
+Now $\omega\tau(t)$:
+
+\[
+\begin{array}{ll}
+  \omega(g(h(b,c),h(h(b,c),a),a))\\
+  g(h(\omega(b),\omega(c)),h(h(\omega(b),\omega(c)),\omega(a)),\omega(a))\\
+  g(h(b,c),h(h(b,c),a),a)
+\end{array}
+\]
+
+We can see that $g(h(b,c),h(h(b,c),a),a)\neq g(h(a,b),h(g(b,f(b)),a),a)$ thus $\tau(\omega(t))\neq\omega(\tau(t))$.
+
+\end{document}
+

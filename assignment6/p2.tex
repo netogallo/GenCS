@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\title{Assignment 6: Abstract Procedures}
+\author{Ernesto Rodriguez}
+\begin{document}
+\maketitle
+
+\section{Problem 2}
+
+\subsection{Part 1}
+
+\begin{tabular}{|c|c|c|}
+  \hline
+  {\bf Iteration Nr.} & {\bf Call} & {\bf Retrun Value}\\
+  \hline
+  1 & g(s(s(0)),0) & s(s(0)) \\
+  \hline
+  2 & g(0,s(0)) & 0 \\
+  \hline
+  3 & f(0) & 0 \\
+  \hline
+\end{tabular}
+  
+\subsection{Part 2}
+
+The recursion relation is as follows:
+\[
+\begin{array}{ll}
+  g=\{\langle 0,1 \rangle,\langle n,n-1\rangle,\langle n,n \rangle\} \\
+  f=\{\langle n,n-2 \rangle \}
+\end{array}
+\]
+
+\subsection{Part 3}
+For f there is no infinite chain in the recursion relation so it terminates. For g the function terminates if both inputs are different. The reason is that (0,0) dosent terminate on g and since the function substracts one from every number on each iteration, the same numbers eventually get to (0,0);
+\subsection{Part 4}
+The `readable` version of the function g would be:
+\[
+g(x,y) =
+\left\{
+	\begin{array}{ll}
+		?  & \mbox{if } x=y \\
+		4*y+(x-y)/2 +1 & \mbox{if } x>y\\
+                4*x+(y-x)/2 -1 & \mbox{otherwise}
+	\end{array}
+\right.
+\]
+
+The function f simply halves it's argument.
+\end{document}
+
