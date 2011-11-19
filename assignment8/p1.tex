@@ -1,0 +1,31 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}    % needed for including graphics e.g. EPS, PS
+%\usepackage{algorithmic} 
+\topmargin -1.5cm        % read Lamport p.163
+\oddsidemargin -0.04cm   % read Lamport p.163
+\evensidemargin -0.04cm  % same as oddsidemargin but for left-hand pages
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty}       % Uncomment if don't want page numbers
+\parskip 7.2pt           % sets spacing between paragraphs
+%\renewcommand{\baselinestretch}{1.5} 	% Uncomment for 1.5 spacing between lines
+\parindent 0pt		  % sets leading space for paragraphs
+\author{Ernesto Rodriguez}
+\title{Assignment 8: Encoding Programs as Strings}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+
+Let $L_i$ be defined as follows:
+
+\[
+\begin{array}{l}
+  L_0:=\{1,\#1,100,001,010,\#001,\#100,\#010\} \\
+  L_i:=\{s_1s_2 | s_1 \in L_{i-1}, s_2 \in \{11,00,1010,0101,\#\}\}
+\end{array}
+\]
+
+\end{document}
