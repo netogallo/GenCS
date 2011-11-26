@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}    % needed for including graphics e.g. EPS, PS
+%\usepackage{algorithmic} 
+\topmargin -1.5cm        % read Lamport p.163
+\oddsidemargin -0.04cm   % read Lamport p.163
+\evensidemargin -0.04cm  % same as oddsidemargin but for left-hand pages
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty}       % Uncomment if don't want page numbers
+\parskip 7.2pt           % sets spacing between paragraphs
+%\renewcommand{\baselinestretch}{1.5} 	% Uncomment for 1.5 spacing between lines
+\parindent 0pt		  % sets leading space for paragraphs
+\author{Ernesto Rodriguez}
+\title{Assignment 9: Boolean Expressions}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+\[
+\begin{array}{ll}
+  e_1 := x_1 * \overline{x_2} + \overline{x_2 + x_3} * \overline{x_1 + \overline{x_3}} \\
+  I_{\varphi}(e_1)=I_{\varphi}(x_1 * \overline{x_2} + \overline{x_2 + x_3} * \overline{x_1 + \overline{x_3}})\\
+  I_{\varphi}(e_1)=I_{\varphi}(x_1) \wedge I_{\varphi}( \overline{x_2}) \vee I_{\varphi}(\overline{x_2 + x_3}) \wedge I_{\varphi}(\overline{x_1 + \overline{x_3}})\\
+  I_{\varphi}(e_1)=T \wedge \neg I_{\varphi}(x_2) \vee \neg I_{\varphi}(x_2 + x_3) \wedge \neg I_{\varphi}(x_1 + \overline{x_3})\\
+  I_{\varphi}(e_1)=T \wedge \neg T \vee \neg (I_{\varphi}(x_2) \vee I_{\varphi}(x_3)) \wedge \neg (I_{\varphi}(x_1) \vee I_{\varphi}(\overline{x_3}))\\
+  I_{\varphi}(e_1)=T \wedge \neg T \vee \neg (T \vee F) \wedge \neg (T \vee F)\\
+  I_{\varphi}(e_1)=T \wedge F \vee \neg (T) \wedge \neg (T)\\
+  I_{\varphi}(e_1)=T \wedge F \vee F \wedge F\\
+  I_{\varphi}(e_1)=F\\
+\end{array}
+\]
+
+\[
+\begin{array}{ll}
+  I_{\varphi}(e_2)=I_{\varphi}(\overline{x_1} * (x_2*\overline{x_3}) + (x_1 + x_2) * (x_2+x_3))\\
+  I_{\varphi}(e_2)=I_{\varphi}(\overline{x_1}) \wedge I_{\varphi}(x_2*\overline{x_3}) \vee  I_{\varphi}(x_1 + x_2) \wedge I_{\varphi}(x_2+x_3)\\
+  I_{\varphi}(e_2)=\neg I_{\varphi}(x_1) \wedge ( I_{\varphi}(x_2) \wedge I_{\varphi}(\overline{x_3})) \vee  (I_{\varphi}(x_1) \vee I_{\varphi}(x_2)) \wedge (I_{\varphi}(x_2) \vee I_{\varphi}(x_3))\\
+  I_{\varphi}(e_2)=\neg T \wedge ( T \wedge F) \vee  (T \vee T) \wedge (T \vee F)\\
+  I_{\varphi}(e_2)=F \wedge F \vee  T \wedge T\\
+  I_{\varphi}(e_2)=T\\
+\end{array}
+\]
+  
+\end{document}

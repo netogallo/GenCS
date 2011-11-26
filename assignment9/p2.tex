@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}    % needed for including graphics e.g. EPS, PS
+%\usepackage{algorithmic} 
+\topmargin -1.5cm        % read Lamport p.163
+\oddsidemargin -0.04cm   % read Lamport p.163
+\evensidemargin -0.04cm  % same as oddsidemargin but for left-hand pages
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty}       % Uncomment if don't want page numbers
+\parskip 7.2pt           % sets spacing between paragraphs
+%\renewcommand{\baselinestretch}{1.5} 	% Uncomment for 1.5 spacing between lines
+\parindent 0pt		  % sets leading space for paragraphs
+\author{Ernesto Rodriguez}
+\title{Assignment 9: Boolean Expressions}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 2}
+
+\[
+\begin{array}{l l}
+  \overline{x_1*x_2}*\overline{\overline{x_1}*x_2}+x_1*x_3 & \textrm{De morgan: $\overline{x_1*x_2}=\overline{x_1}+\overline{x_2}$, $\overline{\overline{x_1}*x_2}=x_1+\overline{x_2}$}\\
+  (\overline{x_1}+\overline{x_2})*(x_1+\overline{x_2})+x_1*x_3 & \textrm{Combining: $(\overline{x_1}+\overline{x_2})*(x_1+\overline{x_2})=\overline{x_2}$}\\
+  x_2+(x_1*x_3)\\
+\end{array}
+\]
+\[
+\begin{array}{l l}
+  \overline{\overline{x_1+\overline{x_2}}*x_2+x_2*\overline{x_3}} & \textrm{De Morgan: $\overline{x_1+\overline{x_2}}=\overline{x_1}*{x_2}$} \\
+  \overline{\overline{x_1}*x_2*x_2+x_2*\overline{x_3}} & \textrm{Redundancy: $x_2*x_2=x_2$} \\
+  \overline{\overline{x_1}*x_2+x_2*\overline{x_3}} & \textrm{Distributibity: $\overline{x_1}*x_2+x_2*\overline{x_3}=(\overline{x_1}*x_2+x_2)*(\overline{x_1}*x_2+\overline{x_3})$} \\
+  \overline{(\overline{x_1}*x_2+x_2)*(\overline{x_1}*x_2+\overline{x_3})} & \textrm{$\overline{x_1}*x_2+x_2=x_2$}\\
+  \overline{x_2 * (\overline{x_1}*x_2+\overline{x_3})} & \textrm{Distributibity: $x_2 * (\overline{x_1}*x_2+\overline{x_3})=(x_2*\overline{x_1}*x_2)+(\overline{x_3}*x_2))$} \\
+  \overline{(x_2*\overline{x_1}*x_2)+(\overline{x_3}*x_2)} & \textrm{Redundancy: $x_2*\overline{x_1}*x_2=\overline{x_1}*x_2$} \\
+  \overline{(\overline{x_1}*x_2)+(\overline{x_3}*x_2)} & \textrm{De Morgan: $\overline{(\overline{x_1}*x_2)+(\overline{x_3}*x_2)}=\overline{\overline{x_1}*x_2}*\overline{\overline{x_3}*x_2}$}\\
+  \overline{\overline{x_1}*x_2}*\overline{\overline{x_3}*x_2} & \textrm{De Morgan: $\overline{\overline{x_1}*x_2}=x_1+\overline{x_2}$, $\overline{\overline{x_3}*x_2}=x_3+\overline{x_2}$} \\
+  x_1+\overline{x_2}*x_3+\overline{x_2} & \textrm{Distributibity: $x_1+\overline{x_2}*x_3+\overline{x_2}=x_2+(x_1*x_3)$} \\
+  x_2+(x_1*x_3)\\
+\end{array}
+\]
+
+\end{document}
+
