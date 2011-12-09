@@ -1,0 +1,31 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}    % needed for including graphics e.g. EPS, PS
+%\usepackage{algorithmic} 
+\topmargin -1.5cm        % read Lamport p.163
+\oddsidemargin -0.04cm   % read Lamport p.163
+\evensidemargin -0.04cm  % same as oddsidemargin but for left-hand pages
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty}       % Uncomment if don't want page numbers
+\parskip 7.2pt           % sets spacing between paragraphs
+%\renewcommand{\baselinestretch}{1.5} 	% Uncomment for 1.5 spacing between lines
+\parindent 0pt		  % sets leading space for paragraphs
+\author{Ernesto Rodriguez}
+\title{Assignment 10: Boolean Expressions, Normal Forms and Landau Sets}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 4}
+
+\begin{itemize}
+  \item{$\pi \in O(n)$: Since the function calls itself once for every number until it reaches 0. So in other words is called n times.}
+  \item{$\mu \in O(n^2)$: This function calls itself n times, but in every call it also calls the function $\pi$ which is of complexity $O(n)$ so it's basically calling a function of complexity $O(n)$ $n$ times so the complexity is $O(n^2)$.}
+  \item{$\epsilon \in O(n^3)$: Since it's basically defined as multiplying $n$ times therefore $\epsilon \in O(n*n^2)$.}
+  \item{$gigatwist \in O(n^n)$: A function work is declared with parameter $n$. This function calls nextwork which invokes the work function again, now defined with $n-1$ as parameter and keeps doing so until it reaches 1. On the way up from the recursion, each of this n iterations now calls nextwork recursively for every element of the list ($n$ times as well). So in summary a function called $n$ times calls a funtion that is called $n$ times recursively therefore we get $O(n^n)$.}
+\end{itemize}
+
+\end{document}
+
+

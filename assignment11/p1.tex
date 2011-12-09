@@ -1,0 +1,37 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}    % needed for including graphics e.g. EPS, PS
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{algorithmic} 
+\topmargin -1.5cm        % read Lamport p.163
+\oddsidemargin -0.04cm   % read Lamport p.163
+\evensidemargin -0.04cm  % same as oddsidemargin but for left-hand pages
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty}       % Uncomment if don't want page numbers
+\parskip 7.2pt           % sets spacing between paragraphs
+%\renewcommand{\baselinestretch}{1.5} 	% Uncomment for 1.5 spacing between lines
+\parindent 0pt		  % sets leading space for paragraphs
+\author{Ernesto Rodriguez}
+\title{Assignment 11: Propositional Logic and Quine McCluskey}
+
+\begin{document}
+\maketitle
+\section{Part 1}
+\begin{enumerate}
+  \item{Good Ol' $x$}
+  \item{Good Ol' $x*\overline{x}$}
+\end{enumerate}
+
+\section{Part 2}
+\begin{enumerate}
+  \item{$(C\Rightarrow C)\Rightarrow C \Rightarrow (C\Rightarrow C)$ | (K with [$C \Rightarrow C\Rightarrow C$/$P$],[$C$/$Q$])}
+  \item{$C \Rightarrow C \Rightarrow (C \Rightarrow C) \Rightarrow (C \Rightarrow C) \Rightarrow C \Rightarrow (C \Rightarrow C)$ | (S with [$C$/$P$],[$C$/$Q$],[$C\Rightarrow C$/$R$])}
+  \item{$C \Rightarrow C \Rightarrow (C \Rightarrow C)$ | (MP \#1,\#2)}
+  \item{$C \Rightarrow C \Rightarrow C$ | (K with [$C \Rightarrow C$/$P$],[$C$/$Q$])}
+  \item{$(C\Rightarrow C)\Rightarrow (C\Rightarrow C) \Rightarrow (C \Rightarrow C)$ | (MP \#3,\#4)}
+  \item{$(C\Rightarrow C)\Rightarrow (C\Rightarrow C) \Rightarrow (C \Rightarrow C)$ | (K with [$C \Rightarrow C$/$P$],[$C \Rightarrow C$/$Q$])}
+  \item{$(C\Rightarrow C)\Rightarrow (C \Rightarrow C)$ | (MP \#5,\#6)}
+\end{enumerate}
+
+\end{document}

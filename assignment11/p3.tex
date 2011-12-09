@@ -1,0 +1,57 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}    % needed for including graphics e.g. EPS, PS
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{multicol}
+%\usepackage{algorithmic} 
+\topmargin -1.5cm        % read Lamport p.163
+\oddsidemargin -0.04cm   % read Lamport p.163
+\evensidemargin -0.04cm  % same as oddsidemargin but for left-hand pages
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty}       % Uncomment if don't want page numbers
+\parskip 7.2pt           % sets spacing between paragraphs
+%\renewcommand{\baselinestretch}{1.5} 	% Uncomment for 1.5 spacing between lines
+\parindent 0pt		  % sets leading space for paragraphs
+\author{Ernesto Rodriguez}
+\title{Assignment 11: Propositional Logic and Quine McCluskey}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 3}
+
+\begin{multicols}{3}
+  
+  \subsection{First Loop}
+  1. * 0000 \\
+  2. * 0001 \\
+  3. * 0010 \\
+  4. * 0101 \\
+  5. * 0110 \\
+  6. * 0111 \\
+  7. * 1100 \\
+  8. * 1110 \\
+  9. * 1111 \\
+  \subsection{Second Loop}
+  1,2 000-\\
+  1,3 00-0\\
+  2,4 0-01\\
+  3,5 0-10\\
+  4,6 01-1\\
+  5,6 * 011-\\
+  5,8 * -110\\
+  6,9 * -111\\
+  7,8 11-0\\
+  8,9 * 111-
+  \subsection{Third Loop}
+  (5,8),(6,9) -11-\\
+  (5,6),(8,9) -11-\\
+\end{multicols}
+
+The prime implicants are the polinomials without a star(*):
+\[\{\overline{x_1}\overline{x_2}\overline{x_3},\overline{x_1}\overline{x_2}\overline{x_4},\overline{x_1}\overline{x_3}x_4,\overline{x_1}x_3\overline{x_4},\overline{x_1}x_2x_4,x_1x_2\overline{x_4},x_3x_4\}
+\]
+
+\end{document}

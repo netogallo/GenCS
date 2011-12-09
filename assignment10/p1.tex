@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}    % needed for including graphics e.g. EPS, PS
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{algorithmic} 
+\topmargin -1.5cm        % read Lamport p.163
+\oddsidemargin -0.04cm   % read Lamport p.163
+\evensidemargin -0.04cm  % same as oddsidemargin but for left-hand pages
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty}       % Uncomment if don't want page numbers
+\parskip 7.2pt           % sets spacing between paragraphs
+%\renewcommand{\baselinestretch}{1.5} 	% Uncomment for 1.5 spacing between lines
+\parindent 0pt		  % sets leading space for paragraphs
+\author{Ernesto Rodriguez}
+\title{Assignment 10: Boolean Expressions, Normal Forms and Landau Sets}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+
+\subsection{Reflexivity}
+
+Let $f(x)=f(x)$ for all $x \in \mathbb{B}^n$. Assume that $f(x) \nleq f(x)$, then there exists $x \in \mathbb{B}^n$ such that $f(x)\neq f(x)$. This is a contradiction to our original assumption.
+
+\subsection{Transitivity}
+
+Let $f(x)\leq g(x)$ and $g(x)\leq h(x)$ for all $x\in \mathbb{B}^n$. Assume there exists $x^*\in\mathbb{B}^n$ such that $h(x^*)\leq f(x^*)$. By our original assumption we know that $g(x)\leq h(x)$ for all $x\in\mathbb{B}^n$. Then we can say that $g(x^*)\leq h(x^*) \leq f(x^*)$ which implies $g(x^*)\leq f(x^*)$ but $\leq$ is not symmetric (see below) so $f(x)\leq g(x)$ and $g(x^*)\leq f(x^*)$ is not true for all $x\in\mathbb{B}^n$ which is a contradiction.
+
+\subsection{Symetry}
+
+Let $f(x):=x + \overline{x}$ and $g(x):=x * \overline{x}$. Clearly, when $x=T$, $f(x)=T + \overline{T}=T$ and $g(x)=T * \overline{T}=F$. So $g(x)\leq f(x)$ but $f(x)\nleq g(x)$.
+
+\subsection{Antisymmetry}
+
+Let $f(x)\leq g(x)$ for all $x\in\mathbb{B}^n$ and $f(x)\neq g(x)$. Assume that $g(x)\leq f(x)$ for all $x\in\mathbb{B}^n$ then the relation is symmetric, which is a contradiction (proved above). So $g(x)\nleq f(x)$ for all $x\in\mathbb{B}^n$.
+
+\end{document}

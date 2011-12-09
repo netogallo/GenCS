@@ -1,0 +1,37 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}    % needed for including graphics e.g. EPS, PS
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{algorithmic} 
+\topmargin -1.5cm        % read Lamport p.163
+\oddsidemargin -0.04cm   % read Lamport p.163
+\evensidemargin -0.04cm  % same as oddsidemargin but for left-hand pages
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty}       % Uncomment if don't want page numbers
+\parskip 7.2pt           % sets spacing between paragraphs
+%\renewcommand{\baselinestretch}{1.5} 	% Uncomment for 1.5 spacing between lines
+\parindent 0pt		  % sets leading space for paragraphs
+\author{Ernesto Rodriguez}
+\title{Assignment 10: Boolean Expressions, Normal Forms and Landau Sets}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 2}
+
+\begin{itemize}
+\item{$n^3log(n) \in O(n^4)$: We know that $n^4=n^3 * n$ and $log(n)\leq n$ for all $n\in\mathbb{N}/0$.}
+\item{$n+3n^3 \in \Omega (n+n^2)$: $n^2\leq n^3$ for all $n\in \mathbb{N}$.}
+\item{$2^n \in O(e^{n^2})$: We know that $2^n \in O(e^n)$ and that $n \in O(n^2)$.}
+\item{$sin(n) \in O(n)$: $sin(n) \leq 1$ for all $n \in \mathbb{N}$ so there is no $k\in\mathbb{R}$ such that $1*k\geq n$ for all $n \in \mathbb{N}$.}
+\item{$42 \in \Theta(12)$: $42>12$ and if we define $k=100$, $12*k>42$.}
+\item{$n^4 \in \Omega(\frac{n^2}{log(n)})$: Since $n^2 \in \Omega(n^4)$.}
+\item{$log_{10}(n) \in \Omega(ln(n))$: $ln(n)$ allways grows faster than $log_{10}(n)$ so for every $k$ we can allways choose some $n$ large enough such that $ln(n)-k*log_{10}(n)>0$.}
+\item{$n! \in \Omega(5^n)$: Since $5^n=5*5*5*...*5$ and $n!=1*2*3*4...$ so as $n$ so as $n$ grows it get's multiplied by bigger numbers so we can't find a $k$ to make them equivalent.}
+\item{$n^{log_n(8^n)} \in O(9^n)$: Taking the $log_n$ of both functions we get $log_n(8^n)*log_n(n)=log_n(8^n)$ and $n*log_n(9)\approx n$ since $log_n(9) \rightarrow 1$ as $n \rightarrow \infty$. Therefore we have $log_n(8^n)$ and $n$ and $log_n(8^n)\in O(n)$.}
+\item{$(3(n^3)+2)^2 \in \Theta(((n^3)+3)^2)$: Since $9n^6 \in \Theta(n^6)$.}
+\end{itemize}
+
+\end{document}
